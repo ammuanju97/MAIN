@@ -1,0 +1,12 @@
+.bgcolor {
+    background-position: inherit;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+
+
+nav {
+    opacity: 0.8;
+    background-color:whitesmoke;
+  }
