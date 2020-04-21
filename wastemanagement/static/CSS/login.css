@@ -1,0 +1,24 @@
+.bgcolor
+{
+
+    background-position: inherit;
+    background-size:cover;
+    background-repeat: no-repeat;
+}
+
+nav {
+    opacity: 0.8;
+    background-color:whitesmoke;
+  }
+
+  form
+  {
+    margin-top: 100px;
+  }
+  .formstyle {
+    border-radius: 25px;
+    padding: 20px; 
+    background-color: lightblue ;
+    
+  }
+  
