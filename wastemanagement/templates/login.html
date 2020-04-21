@@ -1,0 +1,103 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <style>
+      form{
+        margin-top: 100px;
+        color: firebrick;
+          }
+          label
+          {
+            font-size: 2rem;
+            font-family:'Times New Roman'; 
+           }
+          
+           .heading{color:crimson; position:absolute; text-align: center; top: 20%; width: 100%; font-size:large;}
+          
+    </style>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="\static\CSS\login.css">
+   
+    <title>Online Waste Management System</title>
+  </head>
+    <body class="bgcolor"  background="\static\images\b37.jpg">
+      <nav class="navbar navbar-expand-lg navbar-primary ">
+        <!-- <a class="navbar-brand" href="#">E Waste</a> -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/aboutus/">AboutUs</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Services
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/collectservice/">Collecting Products</a>
+                <a class="dropdown-item" href="/sellservice/">Selling Products</a>
+                <!-- <div class="dropdown-divider"></div> -->
+                <a class="dropdown-item" href="/recycleservice/">Recycling Products</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline  my-lg-0">
+          
+            <div class="btn-group dropleft">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Signup
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/signup/">User Registration</a>
+                <a class="dropdown-item" href="/signup1/">Collecting System Registration</a>
+                <!-- <div class="dropdown-divider"></div> -->
+                
+              </div>
+            
+             </div>
+          </form>
+        </div>
+      </nav>
+      <h6 class="heading">
+              {% for m in messages %}
+      <b style="color:crimson(25, 4, 73);" >{{m.message}}</b>
+      {% endfor%}
+      <form class=" col  offset-md-4 col-md-4 " action="/login/" method="POST" >
+
+
+        {% csrf_token %}
+        
+        
+        <div class="form-group">
+         <b> <label for="exampleInputEmail1">Email Address</label><br>
+          <input type="text"  id="exampleInputEmail1" class="form-control" name="email"  >
+         
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Password</label><br>
+          <input type="password" id="exampleInputPassword1" class="form-control" name="password">
+        </div></b>
+       
+        <button type="submit" class="btn btn-danger">Submit</button>
+      </form>
+</h6>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>
