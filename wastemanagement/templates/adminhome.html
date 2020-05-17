@@ -2,6 +2,16 @@
 <!doctype html>
 <html lang="en">
   <head>
+
+<style>
+  form
+  {
+    margin-top: 300px;
+    color: blue;
+    size: 20rem;
+  }
+</style>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -9,11 +19,11 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="\static\CSS\home.css">
+    <link rel="stylesheet" href="\static\CSS\aboutus.css">
     
     <title>Online Garbage Management System</title>
   </head>
-    <body class="bgcolor13" background="\static\images\b1.jpg" >
+    <body class="bgcolor14" background="\static\images\b1.jpg" >
      
       
 
@@ -30,23 +40,48 @@
           <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link" href="/">View Users</a>
+          <a class="nav-link" href="/viewuserlist/">View Users</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/category/">Add Products</a>
+           <a class="nav-link" href="/addadmin/">Add Products</a>
         </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" href="/approvcollect/">Approve Collecting Agents</a>
+        </li>  -->
         <li class="nav-item">
-          <a class="nav-link" href="/viewcollectingsystem/">View Collecting Agents</a>
-        </li>
+          <a class="nav-link" href="/viewcollect/">View Collecting System</a>
+        </li> 
         
       </ul>
       <form class="form-inline  my-lg-0">
-        <!-- <a class="nav-link " href="/userprofile/{{user.username}}">Profile</a> -->
+        <!-- <a class="nav-link"  href="/login/">Chat with collectingagent</a> -->
         <a class="nav-link"  href="/login/">Logout</a>
       </form>
     </div>
   </nav>
-         
+  <!-- <form class="col-md-4 offset-md-4 collectform" action="/adminhome1/">  
+    {% csrf_token %}
+    <div class="form-group row">
+        <label for="typeofusers"   class="col-md-4 col-form-label">Type of Users</label>
+        <div class="col-md-7"> -->
+          <!-- <input type="text" id="usertype" name="usertype" class="form-control"> -->
+        <!-- <select for="typeofusers" name="typeofusers" class="col-md-12">
+          <option value="select" disabled="true" selected>select</option>
+       
+          <option value="HOME">HOME</option>
+          <option value="HOSPITAL">HOSPITAL</option>
+          <option value="OFFICE">OFFICE</option>
+          <option value="FACTORY">FACTORY</option>
+          
+        </select><br><br>
+        <button type="submit" class="btn btn-primary btn-lg">Submit</button>
+      </div> -->
+    
+    
+     
+    
+  </form>
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

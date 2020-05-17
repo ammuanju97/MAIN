@@ -14,6 +14,10 @@
               color:crimson;
               font-weight: bolder;
             }
+            h1
+            {
+              color: brown;
+            }
 
           </style>
         <!-- Required meta tags -->
@@ -49,26 +53,34 @@
               </div>
             </nav>
            <form class="col-md-4 offset-md-4 collectform" method="POST" action="/addsell/">
+            <h1> Add Recycled Products</h1>
             {% csrf_token %}
-            <div class="form-group row">
+            <!-- <div class="form-group row">
               <label for="productid"  class="col-md-4 col-form-label">Product Id</label>
      
               
               <div class="col-md-7">
                 <input type="text" id="productid" name="productid" class="form-control">
               </div>
-            </div>
+            </div> -->
+            <div class="form-group row">
+              <div class="col-md-7">
+                             <input type="hidden" id="name" name="name" class="form-control" value={{user.first_name}}>
+                           </div>
+                         </div>
             <div class="form-group row">
                 <label for="productname"   class="col-md-4 col-form-label">Product Name</label>
                 <div class="col-md-7">
                   <!-- <input type="text" id="usertype" name="usertype" class="form-control"> -->
-                <select for="productname" name="productname" class="col-md-12">Product Name
-      
-                  <option value="Bottle">Bottle</option>
-                  <option value="Book">Book</option>
-                  <option value="Weapons">Weapons</option>
-                  <option value="Plates">Plates</option>
+                <select for="productname" name="productname" class="col-md-12">
+                  <option value="select" disabled="true" selected>select</option>
+                  {% for e in s %}
+                  
+                  <option value="{{e.categoryname}}">{{e.categoryname}}</option>
+                  <!-- <option value="Book">Book</option> -->
+                  {% endfor %}
                 </select>
+             
                 </div>
               </div>
             <div class="form-group row">

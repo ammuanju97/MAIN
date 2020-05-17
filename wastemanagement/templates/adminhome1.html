@@ -8,12 +8,18 @@
             {
                 margin-top: 200px;
             }
-            label
+            h1
             {
-              font-size: .5em;
-              color:crimson;
-              font-weight: bolder;
+              font-size: 10rem;
+              color: green;
             }
+            h2{
+              color: indigo;
+            }
+            h3{
+              color: blue;
+            }
+
 
           </style>
         <!-- Required meta tags -->
@@ -28,9 +34,8 @@
       <body>
     
     
-        <body class="bgcolor" background="\static\images\b49.jpg" >
-     
-  <nav class="navbar navbar-expand-lg navbar-primary">
+        <body class="bgcolor15" background="\static\images\b21.jpg" >
+      <nav class="navbar navbar-expand-lg navbar-primary">
               <!-- <a class="navbar-brand" href="#">E Waste</a> -->
               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -39,7 +44,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                   <li class="nav-item active">
-                    <a class="nav-link" href="/addadmin/">back <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/adminhome/">home <span class="sr-only">(current)</span></a>
                   </li>
                 
                 </ul>
@@ -49,54 +54,20 @@
                 </form>
               </div>
             </nav>
-       <form class="col-md-4 offset-md-4 collectform" method="POST" action="/addcategory/">
-            <h1> Waste Category Details</h1>
-            {% csrf_token %}
-            <!-- <div class="form-group row">
-              <label for="typeofusers"  class="col-md-4 col-form-label">User Type</label>
-     
-              
-              <div class="col-md-7">
-                 <select for="typeofusers" name="typeofusers" class="col-md-12">
-                  <option value="select" disabled="true" selected>select</option>
-               
-                  <option value="HOME">HOME</option>
-                  <option value="HOSPITAL">HOSPITAL</option>
-                  <option value="OFFICE">OFFICE</option>
-                  <option value="FACTORY">FACTORY</option>
-                  
-                </select>
-              </div>
-            </div>
-             -->
-             <!-- <div class="form-group row">
-              <label for="usertype"  class="col-md-4 col-form-label">User Type</label>
-     
-              
-              <div class="col-md-7">
-                <input type="text" id="usertype" name="usertype" class="form-control">
-              </div>
-            </div> -->
-            <div class="form-group row">
-              <label for="categoryname"  class="col-md-4 col-form-label">Category Name</label>
-     
-              
-              <div class="col-md-7">
-                <input type="text" id="categoryname" name="categoryname" class="form-control">
-              </div>
-            </div>
+           <form class="col-md-12 offset-md-3">
+            
            
+              <h1>The selected user is..</h1><br>
+              <h2> {{typeofusers}}</h2>
+            <h3>  <a href="/category/">Add Category Of  {{typeofusers}}</a></h3>
+              
+             
+            
+          
            
     
-         
-             <div class="form-group row">
-     
-     
-     
-                <label for=""  class="col-md-4 col-form-label"></label>
-             
-              <button type="submit" class="btn btn-primary btn-lg" >Submit</button>
-            </div>
+              
+            
           </form>
     
 

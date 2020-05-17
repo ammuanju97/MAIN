@@ -43,14 +43,14 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/userhome/">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/collectingagenthome/">Home <span class="sr-only">(current)</span></a>
             </li>
             
             
           </ul>
           <form class="form-inline  my-lg-0">
             
-            <a class="nav-link"  href="/userhome/">Logout</a>
+            <a class="nav-link"  href="/collectingagethome/">Logout</a>
           </form>
         </div>
       </nav>
@@ -58,19 +58,19 @@
       
         
         
-       <form class="col-md-4 offset-md-4 collectform" method ="POST" action="/saveprofile/{{user.username}}">
+       <form class="col-md-4 offset-md-4 collectform" method ="POST" action="/collectprofile/{{user.username}}">
 
         {% csrf_token %}
-        {% for e in m %}
+        {% for e in u %}
        
-        <div class="form-group row">
+        <!-- <div class="form-group row">
           <label for="housenumber"  class="col-md-4 col-form-label">HouseNumber:</label>
  
           
           <div class="col-md-7">
             <input type="text" id="housenumber" name="housenumber" class="form-control" value="{{e.housenumber}}">
           </div>
-        </div>
+        </div> -->
         <div class="form-group row">
           <label for="state"  class="col-md-4 col-form-label">State:</label>
  
@@ -79,7 +79,7 @@
             <input type="text" id="state" name="state" class="form-control" value="{{e.state}}">
           </div>
         </div>
-       
+        
         <div class="form-group row">
           <label for="district"  class="col-md-4 col-form-label">District:</label>
  

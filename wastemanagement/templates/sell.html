@@ -6,7 +6,7 @@
 
             form
             {
-                margin-top: 300px;
+                margin-top: 150px;
             }
             label
             {
@@ -14,7 +14,10 @@
               color:blue;
               font-weight: bolder;
             }
-
+           h1
+           {
+             color: brown;
+           }
           </style>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -25,130 +28,70 @@
         
         
         <link rel="stylesheet" href="\static\CSS\aboutus.css">
-        
-        
         <title>online waste management</title>
       </head>
       <body>
-    
-    
-        <body class="bgcolor" background="\static\images\b40.jpg" >
-     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    <body class="bgcolor" background="\static\images\b40.jpg" >
           <nav class="navbar navbar-expand-lg navbar-primary ">
             <!-- <a class="navbar-brand" href="#">E Waste</a> -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
-          
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
                   <a class="nav-link" href="/userhome/">Home <span class="sr-only">(current)</span></a>
                 </li>
-                
-                
-              </ul>
+                  </ul>
               <form class="form-inline  my-lg-0">
-                
-                <a class="nav-link"  href="/userhome/">Logout</a>
+                  <a class="nav-link"  href="/userhome/">Logout</a>
               </form>
             </div>
           </nav>
-    
-
-         
-
-          <form class="col-md-4 offset-md-4 sellform" action="/selltype/" method="POST">
+  <form class="col-md-4 offset-md-4 sellform" action="/selltype/" method="POST">
+    <h1>Sell Waste Details</h1>
             {% csrf_token %}
             <div class="form-group row">
-              <!-- <label for="name"  class="col-md-4 col-form-label">Name</label> -->
-     
-              
-              <div class="col-md-7">
+ <div class="col-md-7">
                 <input type="hidden" id="name" name="name" class="form-control" value={{user.first_name}}>
+                <input type="hidden" id="email" name="email" class="form-control" value={{user.username}}>
+                <input type="hidden" id="cname" name="cname" class="form-control" value={{user.username}}>
               </div>
             </div>
             <div class="form-group row">
               <label for="wastetype"   class="col-md-4 col-form-label">Waste Type</label>
               <div class="col-md-7">
                 <!-- <input type="text" id="usertype" name="usertype" class="form-control"> -->
-              <select for="usertype" name="wastetype" class="col-md-12">select
-    
-                <option value="Iron">Iron</option>
-                <option value="Plastic">Plastic</option>
-                <option value="Aluminium">Aluminium</option>
-                <option value="Papper">Papper</option>
+              <select for="usertype" name="wastetype" class="col-md-12">
+                <option value="select" disabled="true" selected>select</option>
+    {% for e in s %}
+                <option value="{{e.categoryname}}">{{e.categoryname}}</option>
+                <!-- <option value="Plastic">Plastic</option>-->
+                {% endfor %}
               </select>
               </div>
             </div>
             <div class="form-group row">
               <label for="weight"  class="col-md-4 col-form-label" >Weight</label>
-     
-              
-              <div class="col-md-7">
+     <div class="col-md-7">
                 <input type="text" id="weight" name="weight" class="form-control" placeholder="minimum 1 kg">
               </div>
             </div>
-            <!-- <div class="form-group row">
-              <label for="quantity"  class="col-md-4 col-form-label">Quantity</label>
-     
-              
-              <div class="col-md-7">
-                <input type="text" id="quantity" name="quantity" class="form-control" placeholder="maximum 100">
-              </div>
-            </div> -->
+            
             <div class="form-group row">
               <label for="price"  class="col-md-4 col-form-label">Price</label>
-     
-              
-              <div class="col-md-7">
+     <div class="col-md-7">
                 <input type="text" id="price" name="price" class="form-control" placeholder="minumum 10/-">
               </div>
             </div>
-            <!-- <div class="form-group row">
-              <label for="sellername"  class="col-md-4 col-form-label">SellerName</label>
-              <div class="col-md-7">
-                <input type="text" id="sellername" name="sellername"class="form-control">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="date"  class="col-md-4 col-form-label">Date</label>
-              <div class="col-md-7">
-                <input type="date" id="date" name="date" class="form-control">
-              </div>
-            </div>
-             -->
-    
-    
-    
-         
-             <div class="form-group row">
-              <div class="col-md-7">
+               <div class="form-group row">
+             <div class="col-md-7">
                
               </div>
-              <button type="submit" class="btn btn-primary btn-lg"  >Sell</button>
+              <button type="submit" class="btn btn-primary btn-lg" >Sell</button>
             </div>
           </form>
-    
 
-
-
-
-
-    
-        <h1></h1>
     
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -157,4 +100,4 @@
         <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
       </body>
     </html>
-    
+      

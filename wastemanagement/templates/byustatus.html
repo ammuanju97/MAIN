@@ -5,16 +5,22 @@
           <style>
             form
             {
-              margin-top: 50px;
+              margin-top: 150px;
               color:blue;
             }
-        h1{
-            color: crimson;
-        }
-            th{
-              
-            color:mediumblue;
-          }
+        
+            label
+            {
+             
+              color:green;
+              font-weight: bolder;
+            }
+            h1{
+              size: 100;
+              color:indigo;
+              text-align: center;
+            }
+
           </style>
         <!-- Required meta tags -->
         <meta charset="utf-8">
@@ -28,18 +34,8 @@
       <body>
     
     
-        <body class="bgcolor8" background="\static\images\b21.jpg" >
-     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-          <nav class="navbar navbar-expand-lg navbar-primary ">
+        <body class="bgcolor10" background="\static\images\b34.jpg" >
+    <nav class="navbar navbar-expand-lg navbar-primary ">
             <!-- <a class="navbar-brand" href="#">E Waste</a> -->
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
@@ -48,7 +44,7 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="/userhome/">Home <span class="sr-only">(current)</span></a>
+                  <!-- <a class="nav-link" href="/collectingagenthome/">Home <span class="sr-only">(current)</span></a> -->
                 </li>
                 
                 
@@ -59,48 +55,67 @@
               </form>
             </div>
           </nav>
-    
-    
-
-           <form method="POST" action="/viewcollectingsystem/">
-           {% csrf_token %}
-          
-           <table class="table table-bordered table-primary">
-            <thead>
-              <tr>
-                <!-- <th scope="col">No</th> -->
-                <th scope="col">Collecting Agent Name</th>
-                <th scope="col">Mobile Number</th>
-                <th scope="col">Location</th>
-                <th scope="col">Email Id</th>
-
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                {% for e in m1 %}
-                <!-- <th scope="row">1</th> -->
-                <td>{{e.cname}}</td>
-                <td>{{e.mobile}}</td>
-                <td> {{e.district}}</td>
-                <td>{{e.username}}</td>
-                
-              </tr>
-              
-              {% endfor %}
-            </tbody>
-          </table>
          
-             
-          </form>
-    
+           
+
+          <form class="col-md-4 offset-md-4 collectform" method="POST">
+      
+            
+            <h1>Recycled Product Details</h1>
+            <div class="form-group row">
+              <label for="productname"  class="col-md-4 col-form-label">ProductName</label>
+            
+              
+              <div class="col-md-4">
+                {{bu.productname}}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="weight"  class="col-md-4 col-form-label">Weight</label>
+            
+              
+              <div class="col-md-4">
+                {{bu.weight}}
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="price"  class="col-md-4 col-form-label">Price</label>
+            
+              
+              <div class="col-md-4">
+                {{bu.price}}
+              </div>
+            </div>
+           
+     
+            
+          
+          
 
 
 
-
-
-    
+         
+          
+      
+      
+          <form method="POST" action="/orderfun/{{bu.id}}">
+          {% csrf_token %}
+              <div class="container">
+                <input type="hidden" value="{{bu.id}}">
+                      <input type="hidden" name="status" value="booked">
+                      <input type="hidden" name="u" value="{{user.username}}">
+                      <input type="hidden" name="v" value="{{user.first_name}}">
+                  <div class="form-group row">
         
+          
+                    <div class="col-md-7">
+                      <button type="submit" class="btn btn-primary btn-lg">Book Now</button> 
+          
+                    </div>
+                  </div> 
+                  
+              
+                </form>  
     
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

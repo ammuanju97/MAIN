@@ -45,46 +45,26 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="/notifications/">back <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="/collectingagenthome/">back <span class="sr-only">(current)</span></a>
                 </li>
                 
                 
               </ul>
               <form class="form-inline  my-lg-0">
                 
-                <!-- <a class="nav-link"  href="/collectingagenthome/">Logout</a> -->
+               
               </form>
             </div>
           </nav>
-         <form class="col-md-4 offset-md-4 collectform" method="POST">
-            <!-- {% csrf_token %}
-          <h1>Collect Product </h1>
-            <table class="table table-bordered table-primary">
-              <thead>
-                <tr>
-                            <th scope="col">Collecting Agent Name</th>
-                  <th scope="col">Waste Type</th>
-                  <th scope="col">Weight</th>
-                  <th scope="col">price</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                
-                  <td>{{e.user}}</td>
-                  <td>{{e.wastetype}}</td>
-                  <td> {{e.weight}}</td>
-                  <td>{{e.price}}</td>
-                </tr>
-              </tbody>
-            </table> -->
+         <form class="col-md-4 offset-md-4 collectform" method="POST" action="/collectvisit/">
+            
   
+{% csrf_token %}
 
 
-
-
-<h1>Buy Waste Details</h1>
-<div class="form-group row">
+ 
+<h1>Site Visit Details</h1>
+<!-- <div class="form-group row">
   <label for="wastetype"  class="col-md-4 col-form-label">Wastetype</label>
 
   
@@ -127,8 +107,73 @@
         </div>
         
 
-      </form>
-       
+      </form> -->
+    
+
+
+
+
+
+
+
+
+
+    
+    User Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="username" value={{sv.user}}><br><br>
+
+    User Email ID:&nbsp;&nbsp;&nbsp;<input type="text" name="email" value={{sv.email}}><br><br>
+
+   
+    <input type="hidden" name="cname" value={{sv.cname}}><br>
+    <!-- <input type="hidden" name="email1" value={{user.email1}}> -->
+    <!-- <input type="hidden" name="d5" value={{user.housenumber}}> -->
+   
+   Type of Waste:&nbsp;&nbsp;&nbsp;<input type="text" name="wastetype" value={{sv.wastetype}}><br><br>
+  
+
+     
+    Weight:&nbsp;<input type="text" name="weight" value={{sv.weight}}><br><br>
+   
+   Price:&nbsp;<input type="text" name="price" value={{sv.price}}><br><br><hr>
+ 
+    
+   <div class="col-md-4 align-items-end ml-md-5">
+       <div class="form-group" data-target="#{{date13}}">
+            
+                
+                
+   <!-- <label for="">Date For Site Visit</label> -->
+   Date for Collecting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <input type="date" name="date22" id="date2">
+   </div>
+   </div>
+
+   
+ 
+
+ 
+   <input type="submit"  value="SUBMIT" style="background-color: chartreuse;" >
+        
+                    
+   </form>
+          
+     
+
+   <script>
+       $(function f22() {
+           $("#{{date13}}").data({
+               format: 'yyyy/mm/dd',
+           });
+       });
+   </script>
+
+
+
+
+
+
+
+
     
         <!-- Optional JavaScript -->
         <!-- jQuery first, then Popper.js, then Bootstrap JS -->

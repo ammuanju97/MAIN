@@ -40,34 +40,53 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="/viewcollectingsystem/">ViewCollectingAgents <span class="sr-only">(current)</span></a>
+              <!-- <a class="nav-link" href="/viewcollectingsystem/">ViewCollectingAgents <span class="sr-only">(current)</span></a> -->
             </li>
             
           </ul>
           <form class="form-inline  my-lg-0">
            <!-- <a class="btn  " href="login.html">Login</a> --> 
-         <a class="nav-link"  href="/viewcollectingagent/">Logout</a> 
+         <a class="nav-link"  href="/collectingagenthome/">Logout</a> 
           </form>
         </div>
       </nav>
 
 <div class=" bgim">   
    
-    
-      <form class="col-sm-4 offset-sm-5 box">
-        <div class="form-group row">
-         
-            <a class="form1" href="#">ViewLogs</a>
-         
-        </div>
-        <div class="form-group row">
-            <a class="form1" href="#">Update Products</a>
-        </div>
-         
-          <div class="form-group row">
-            <a class="form1" href="#">Payment Logs</a>
-          
-          </div>
+
+  <form method="POST" action="/viewcollectingsystem/">
+    {% csrf_token %}
+   
+    <table class="table table-bordered table-primary">
+     <thead>
+       <tr>
+         <!-- <th scope="col">No</th> -->
+         <th scope="col">Waste Type</th>
+         <th scope="col">User Name</th>
+         <th scope="col">Email</th>
+         <th scope="col">Action</th>
+
+       </tr>
+     </thead>
+     <tbody>
+      
+         {% for e in c1 %}
+         <tr>
+         <!-- <th scope="row">1</th> -->
+         <td>{{e.wastetype}}</td>
+         <td>{{e.user}}</td>
+         <td> {{e.email}}</td>
+         <td>          
+                     <input type="hidden" name="u" value={{user.username}}>
+          <input type="hidden" name="m" value={{user.first_name}}>
+     
+       <a href="/sitevisit/{{e.user}}/{{e.id}}">Sitevisit Details</a> 
+          {% endfor %}
+         </tr>
+</td>
+</tbody>
+</table>      
+      
 </form>
 </div>
 

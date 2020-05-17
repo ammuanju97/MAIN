@@ -1,24 +1,22 @@
+
 {% load static %}
 <!doctype html>
 <html lang="en">
   <head>
     <style>
+      label
+      {
+        font-size: .5em;
+        color:rgb(35, 28, 37);
+      }
+      .box{
+        padding-top: 10%;
+        padding-bottom: 20%;
+      }
       form
       {
-        margin-top: 220px;
+          margin-top: 250px;
       }
-      h1{
-        color:whitesmoke;
-        text-align:center;
-        text-underline-position: below;
-        text-underline-offset:inherit;
-        
-      }
-      h3{
-        color:wheat;
-        text-align: center;
-      }
-    
     </style>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -28,12 +26,16 @@
    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
- <link rel="stylesheet" href="\static\CSS\aboutus.css">
-<title>Online Waste Management System</title>
+    <link rel="stylesheet" href="\static\CSS\aboutus.css">
+    
+    
+    <title>Online Waste Management System</title>
   </head>
-  <body class="bgcolor11"  background="\static\images\b25.jpg">
-  
-   <nav class="navbar navbar-expand-lg navbar-primary ">
+  <body class="bgcolor9" background="\static\images\b9.jpg">
+    
+
+
+      <nav class="navbar navbar-expand-lg navbar-primary ">
         <!-- <a class="navbar-brand" href="#">E Waste</a> -->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -42,60 +44,39 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-             
-            </li>
-            <li class="nav-item">
-             <a class="nav-link" href="/editprofile/{{user.username}}">Edit Profile</a>
-             
+              <a class="nav-link" href="/adminhome/">back <span class="sr-only">(current)</span></a>
             </li>
             
           </ul>
           <form class="form-inline  my-lg-0">
-           
-            <a class="nav-link"  href="/login/">Logout</a>
+           <!-- <a class="btn  " href="login.html">Login</a> --> 
+         <!-- <a class="nav-link"  href="/viewcollectingagent/">Logout</a>  -->
           </form>
         </div>
       </nav>
 
-
-      <form >
-        <h1> The services provided by the collecting agents</h1>
-      <br>
-      <br>
-        <div >
-          <h3>To collect the waste materials .....
-            <a href="/notifications/">click here...</a>
+<div class=" bgim">   
+   
+    
+      <form class="col-md-4 offset-md-4 ">
+        <div class="form-group row">
          
+            <!-- <a class="form1" href="#">ViewLogs</a> -->
          
-          <div >
-            
         </div>
-      </h3>
-        <div>
-          <br>
-          <br>
-          <br>
-        
-          <h3>To sell  the recycled products.... 
-            <a href="/addproducts/">click here.....</a>
-          
-          <div >
-          
+        <div class="form-group row">
+            <a class="form1" href="/category/">Add Waste Products</a>
         </div>
-      </h3>
-      <div>
-        <br>
-        <br>
-        <br>
-      
-        <h3>Site Visit Details.... 
-          <a href="/collectingagent/{{user.first_name}}">click here.....</a>
-        
-        <div >
-        
-      </div>
-    </h3>
+         
+          <div class="form-group row">
+            <a class="form1" href="/category1/">Add Recycled Products</a>
+          
+          </div>
 </form>
+</div>
+
+      
+      
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>

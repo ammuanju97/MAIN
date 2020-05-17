@@ -48,21 +48,21 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                  <a class="nav-link" href="/userhome/">Home <span class="sr-only">(current)</span></a>
+                  <a class="nav-link" href="/adminhome/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 
                 
               </ul>
               <form class="form-inline  my-lg-0">
                 
-                <a class="nav-link"  href="/userhome/">Logout</a>
+                <a class="nav-link"  href="/adminhome/">Logout</a>
               </form>
             </div>
           </nav>
     
     
 
-           <form method="POST" action="/viewcollectingsystem/">
+           <form method="POST" action="/viewcollect/">
            {% csrf_token %}
           
            <table class="table table-bordered table-primary">
@@ -78,7 +78,7 @@
             </thead>
             <tbody>
               <tr>
-                {% for e in m1 %}
+                {% for e in v1 %}
                 <!-- <th scope="row">1</th> -->
                 <td>{{e.cname}}</td>
                 <td>{{e.mobile}}</td>
@@ -90,7 +90,33 @@
               {% endfor %}
             </tbody>
           </table>
-         
+           <!-- <div class="form-group row">
+            
+             <div class="col-md-7">
+          <a href="/collectingagent/" ></a>  
+           <h1>{{e.cname}}</h1>
+            </div>
+           </div>
+            <div class="form-group row">
+             Location : 
+              <div class="col-md-7">
+                {{e.state}}
+             </div>
+            </div>
+            <div class="form-group row">
+              Mobile No : 
+              <div class="col-md-7">
+                {{e.mobile}}
+              </div>
+            </div>
+            <div class="form-group row">
+              EmailId :
+              <div class="col-md-7">
+                {{e.username}}
+              </div>
+            </div>
+     -->
+        
              
           </form>
     
