@@ -109,6 +109,24 @@
  
   background-repeat: no-repeat;
 }
+.bgcolor14
+{
+
+  background-position: center;
+  
+  height: 500px;
+ 
+  background-repeat: no-repeat;
+}
+.bgcolor15
+{
+
+  background-position: center;
+  
+  height: 500px;
+ 
+  background-repeat: no-repeat;
+}
 .bgim
 {
   background-image: url("static\images\b42.jpg");
@@ -330,7 +348,7 @@ nav {
   border-radius: 25px;
   padding: 25px;
  
- background-color: lightblue;
+ background-color:wheat;
 }
 
 
