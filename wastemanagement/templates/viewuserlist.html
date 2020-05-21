@@ -68,24 +68,21 @@
            <table class="table table-bordered table-primary">
             <thead>
               <tr>
-                <!-- <th scope="col">No</th> -->
-                <th scope="col">User Name</th>
-                <th scope="col">User Type</th>
-                <th scope="col">Mobile Number</th>
-                <th scope="col">Location</th>
-                <th scope="col">Email Id</th>
-
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
                 {% for e in u1 %}
                 <!-- <th scope="row">1</th> -->
                 <td>{{e.name}}</td>
+                <td>{{e.username}}</td>
                 <td>{{e.usertype}}</td>
                 <td> {{e.mobile}}</td>
-                <td>{{e.district}}</td>
-                <td>{{e.username}}</td>
+                <td>{{e.housenumber}}<br>
+                  {{e.state}}<br>
+                  {{e.district}}<br>
+                  {{e.city}}<br>
+                  {{e.pin}}
+                
+                </td>
+
+               
                 
               </tr>
               
