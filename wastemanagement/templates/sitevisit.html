@@ -56,116 +56,83 @@
               </form>
             </div>
           </nav>
-         <form class="col-md-4 offset-md-4 collectform" method="POST" action="/collectvisit/">
+          <form class="col-md-4 offset-md-4 collectform" method="POST" action="/collectvisit/">
             
   
-{% csrf_token %}
-
-
- 
-<h1>Site Visit Details</h1>
-<!-- <div class="form-group row">
-  <label for="wastetype"  class="col-md-4 col-form-label">Wastetype</label>
-
-  
-  <div class="col-md-4">
-    {{cb.wastetype}}
-  </div>
-</div>
-<div class="form-group row">
-  <label for="weight"  class="col-md-4 col-form-label">Weight</label>
-
-  
-  <div class="col-md-4">
-    {{cb.weight}}
-  </div>
-</div>
-<div class="form-group row">
-  <label for="price"  class="col-md-4 col-form-label">Price</label>
-
-  
-  <div class="col-md-4">
-    {{cb.price}}
-  </div>
-</div>
-
-
-<form method="POST" action="/colorder/{{cb.id}}">
-{% csrf_token %}
-    <div class="container">
-        <input type="hidden" value="{{cb.id}}">
-        <input type="hidden" name="status" value="booked">
-        <input type="hidden" name="email" value="{{user.username}}">
-        <input type="hidden" name="name" value="{{user.first_name}}">
-        <div class="form-group row">
-        
-          
-          <div class="col-md-7">
-            <button type="submit" class="btn btn-primary btn-lg">Book Now</button> 
-
-          </div>
-        </div>
-        
-
-      </form> -->
-    
-
-
-
-
-
-
-
-
-
-    
-    User Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" name="username" value={{sv.user}}><br><br>
-
-    User Email ID:&nbsp;&nbsp;&nbsp;<input type="text" name="email" value={{sv.email}}><br><br>
-
-   
-    <input type="hidden" name="cname" value={{sv.cname}}><br>
-    <!-- <input type="hidden" name="email1" value={{user.email1}}> -->
-    <!-- <input type="hidden" name="d5" value={{user.housenumber}}> -->
-   
-   Type of Waste:&nbsp;&nbsp;&nbsp;<input type="text" name="wastetype" value={{sv.wastetype}}><br><br>
-  
-
-     
-    Weight:&nbsp;<input type="text" name="weight" value={{sv.weight}}><br><br>
-   
-   Price:&nbsp;<input type="text" name="price" value={{sv.price}}><br><br><hr>
- 
-    
-   <div class="col-md-4 align-items-end ml-md-5">
-       <div class="form-group" data-target="#{{date13}}">
+            {% csrf_token %}
             
-                
-                
-   <!-- <label for="">Date For Site Visit</label> -->
-   Date for Collecting &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-   <input type="date" name="date22" id="date2">
-   </div>
-   </div>
-
-   
- 
-
- 
-   <input type="submit"  value="SUBMIT" style="background-color: chartreuse;" >
-        
-                    
-   </form>
-          
-     
-
-   <script>
-       $(function f22() {
-           $("#{{date13}}").data({
-               format: 'yyyy/mm/dd',
-           });
-       });
-   </script>
+            
+             
+            <h1>Site Visit Details</h1>
+            <div class="form-group row">
+              <label for="username"  class="col-md-4 col-form-label">UserName</label>
+            
+              
+              <div class="col-md-7">
+                <input type="text" id="username" name="username" class="form-control" value="{{sv.user}}">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="email"  class="col-md-4 col-form-label">Email</label>
+            
+              
+              <div class="col-md-7">
+                <input type="text" id="email" name="email" class="form-control" value="{{sv.email}}">
+              </div>
+            </div>
+            
+            
+            <input type="hidden" name="cname" value={{sv.cname}}>
+            
+            <div class="form-group row">
+              <label for="wastetype"  class="col-md-4 col-form-label">WasteType</label>
+              <div class="col-md-7">
+                <input type="wastetype" id="wastetype" name="wastetype" class="form-control" value="{{sv.wastetype}}">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="weight"  class="col-md-4 col-form-label">Weight</label>
+              <div class="col-md-7">
+                <input type="text" id="weight" name="weight" class="form-control" value="{{sv.weight}}">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="price"   class="col-md-4 col-form-label">Price</label>
+              <div class="col-md-7">
+                <input type="text" id="price" name="price" class="form-control" value="{{sv.price}}">
+              </div>
+            </div>
+            
+            
+            <div class="form-group row">
+              <label class="col-md-4 col-form-label" data-target="#{{date13}}">Collecting Date</label>
+              <div class="col-md-7">
+                <input type="date" name="date22" class="form-control" id="date2">
+              </div>
+            </div>
+            
+            
+             
+             <div class="form-group row">
+              <div class="col-sm-10">
+               
+                <button type="submit" class="btn btn-primary btn-lg">SUBMIT</button>
+              </div>
+            </div>
+               </form>
+                 
+            
+               <script>
+                   $(function f22() {
+                       $("#{{date13}}").data({
+                           format: 'yyyy/mm/dd',
+                       });
+                   });
+               </script>
+            
+            
+            
+            
 
 
 
