@@ -19,7 +19,7 @@ urlpatterns = [
     path('collectingagent/<str:name>',views.collectingagent, name='collectingagent'),
     path('sitevisit/<str:name>/<int:id>',views.sitevisit,name='sitevisit'),
     path('collectvisit/',views.collectvisit,name='collectvisit'),
-    path('visitdate/',views.visitdate,name='visitdate'),
+    path('visitdate/<str:username>',views.visitdate,name='visitdate')
     
     path('payment/',views.payment,name='payment')
 
