@@ -135,7 +135,7 @@ def collectvisit(request):
         coll=CollectDetails(username=username, email=email, cname=cname, wastetype=wastetype, weight=weight, price=price, date=date)
         coll.save()
         return render(request, 'sitevisit.html')
-
-def visitdate(request):
-    vd=CollectDetails.objects.filter()
+        
+def visitdate(request,username):
+    vd=CollectDetails.objects.filter(email=username)
     return render(request,'visitdate.html',{'vd':vd})
