@@ -4,6 +4,7 @@ from common.models import AddCategory, AddRecycle
 from django.http import HttpResponse
 from django.contrib import messages
 from user.models import UserRegister, CollectRegister1
+from collect.models import Payment, SellPayment
 # Create your views here.
 def category(request):
     return render(request, 'category.html')
@@ -31,9 +32,12 @@ def addrecycle(request):
 
 
 def adminhome1(request):
-    results=request.GET["typeofusers"] 
-    return render(request, 'adminhome1.html',{'typeofusers':results})
+    a1=Payment.objects.filter()
+    return render(request, 'adminhome1.html', {'a1':a1})
 
+def adminhome2(request):
+    a2=SellPayment.objects.filter()
+    return render(request, 'adminhome2.html', {'a2':a2})
 
 def addadmin(request):
     return render(request, 'addadmin.html')
