@@ -27,7 +27,7 @@ path('viewproducts/',views.viewproducts,name='viewproducts'),
 path('viewcollectingsystem/',views.viewcollectingsystem,name='viewcollectingsystem'),
 
 
-path('wastedetails/',views.wastedetails,name='wastedetails'),
+
 
 path('usertype/',views.usertype,name='usertype'),
 path('logout/',views.logout,name='logout')

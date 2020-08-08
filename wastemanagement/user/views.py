@@ -56,8 +56,6 @@ def viewproducts(request):
     list1 = ViewProduct.objects.all()
     return render(request, 'viewproducts.html', {'list1':list1})
 
-def wastedetails(request):
-    return render(request, 'wastedetails.html')
 
 def signup1(request):
     return render(request, 'signup1.html')
@@ -122,7 +120,7 @@ def login(request):
     if request.method == 'POST':
         username = request.POST['email']
         password = request.POST['password']
-        if username=='admin' and  password=='admin':
+        if username=='admin@gmail.com' and  password=='admin':
             return redirect('adminhome')
         else:
             user = auth.authenticate(username=username, password=password)
