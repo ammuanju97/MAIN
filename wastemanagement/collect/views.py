@@ -1,7 +1,7 @@
 
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
-from collect.models import AddProduct, CollectDetails
+from collect.models import AddProduct, CollectDetails, BookForm, Payment, SellPayment
 from django.http import HttpResponse
 from django.contrib import messages
 from common.models import AddRecycle
@@ -135,7 +135,55 @@ def collectvisit(request):
         coll=CollectDetails(username=username, email=email, cname=cname, wastetype=wastetype, weight=weight, price=price, date=date)
         coll.save()
         return render(request, 'sitevisit.html')
-        
+
 def visitdate(request,username):
     vd=CollectDetails.objects.filter(email=username)
     return render(request,'visitdate.html',{'vd':vd})
+
+
+
+def bookform(request):
+   return render(request, 'bookform.html')
+
+def bookdetails(request):
+    if request.method == 'POST':
+        tokenno = request.POST['tokenno']
+        bd=CollectDetails.objects.get(id=tokenno)
+        bcname = bd.cname
+        busername = bd.username
+        bwastetype = bd.wastetype
+        bdate = bd.date
+        bk=BookForm(tokenno=tokenno, cname=bcname, username=busername, wastetype=bwastetype, date=bdate)
+        bk.save()
+        return render(request,'bookform.html')
+
+def sendform(request):
+     return render(request, 'sendform.html')
+
+def sendform1(request,uname):
+    f=BookForm.objects.filter(username=uname)
+    return render(request, 'sendform.html', {'f':f})
+
+def buypayment(request):
+    if request.method == 'POST':
+        cardnumber = request.POST['cardnumber']
+        expirydate = request.POST['expiry_date']
+        cvv = request.POST['cvv']
+        nameofcard = request.POST['name_on_card']
+        bp=Payment(cardnumber=cardnumber, expirydate=expirydate, cvv=cvv, nameofcard=nameofcard)
+        bp.save()
+        return render(request, 'payment.html')
+
+def payment1(request):
+    return render(request,'payment1.html')
+
+def sellpay(request):
+    if request.method == 'POST':
+        cardnumber = request.POST['cardnumber']
+        expirydate = request.POST['expiry_date']
+        cvv = request.POST['cvv']
+        nameofcard = request.POST['name_on_card']
+        bp=SellPayment(cardnumber=cardnumber, expirydate=expirydate, cvv=cvv, nameofcard=nameofcard)
+        bp.save()
+        return render(request, 'payment1.html')   
+        
